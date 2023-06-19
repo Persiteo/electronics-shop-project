@@ -23,11 +23,11 @@ class Item:
         self.all.append(self)
 
     @property
-    def item_name(self):
+    def name(self):
         return self.__name
 
-    @item_name.setter
-    def item_name(self, name):
+    @name.setter
+    def name(self, name):
         if len(name) <= 10:
             self.__name = name
         else:
