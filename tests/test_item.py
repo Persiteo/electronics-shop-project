@@ -15,12 +15,21 @@ def test_item_init(some_item):
     assert some_item.quantity == 10
 
 
+def test_repr(some_item):
+    assert some_item.__repr__() == "Item('Фен', 3000, 10)"
+
+
+def test_str(some_item):
+    assert some_item.__str__() == 'Фен'
+
+
 def test_calculate_total_price(some_item):
     assert some_item.calculate_total_price() == 30000
 
 
 def test_apply_discount(some_item):
     assert some_item.apply_discount() is None
+
 
 def test_item_name():
     item1 = Item("Смартфон", 10000, 20)
