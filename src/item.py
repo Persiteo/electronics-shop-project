@@ -28,6 +28,11 @@ class Item:
     def __str__(self):
         return self.name
 
+    def __add__(self, other):
+        if isinstance(other, self.__class__):
+            return self.quantity + other.quantity
+        raise Exception("Что-то не так")
+
     @property
     def name(self):
         return self.__name
@@ -67,7 +72,6 @@ class Item:
                 price = each_row['price']
                 quantity = each_row['quantity']
                 cls(name, float(price), int(quantity))
-
 
     @staticmethod
     def string_to_number(value):
